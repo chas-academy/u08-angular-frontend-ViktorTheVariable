@@ -1,6 +1,7 @@
-.grid {
+.main-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2rem;
 }

@@ -33,7 +33,7 @@ export class CardComponent {
       return this.sanitizer.bypassSecurityTrustStyle('none');
     }
 
-    const baseUrl = 'https://topwarmovies.onrender.com';
+    const baseUrl = 'http://localhost:3000';
 
     const imageUrl = this.data.media.imageUrl.startsWith('http')
       ? this.data.media.imageUrl

@@ -1,1 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    --pri-bg-color: #444444;
+    --sec-bg-color: #000000;
+    --op-bg-color: rgba(0, 0, 0, 0.7);
+    --pri-txt-color: #ffffff;
+    --sec-txt-color: #D63537;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+main#main {
+    text-align: center;
+}
+
+h2.main-title {
+    font-size: 2rem;
+    padding: 0.2rem 1rem;
+    background-color: var(--sec-bg-color);
+    color: var(--sec-txt-color);
+    border-radius: 1rem;
+    display: inline-block;
+}

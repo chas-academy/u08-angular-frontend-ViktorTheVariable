@@ -1,6 +1,4 @@
-:host {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: pink;
-  }
+main.main {
+  background-color: var(--pri-bg-color);
+  padding: 3rem 0;
+}

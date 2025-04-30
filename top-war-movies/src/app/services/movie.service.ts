@@ -8,7 +8,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class MovieService {
-  private apiUrl = 'https://topwarmovies.onrender.com/api/v1/warmovies';
+  private apiUrl = '/api/v1/warmovies';
   constructor(private http: HttpClient) { }
 
   getMovies(): Observable<MovieCard[]> {

@@ -9,10 +9,10 @@ import { MovieCard } from '../../models/movie-card.model';
   standalone: true,
   imports: [CardComponent, CommonModule],
   template: `
-    <h2>Top War Movies</h2>
+    <h2 class="main-title">Top War Movies</h2>
     <div *ngIf="isLoading">Loading Movies...</div>
     <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
-    <div class="grid">
+    <div class="main-container">
         <app-card 
           *ngFor="let movie of movies" 
           [data]="movie">
