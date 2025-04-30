@@ -25,6 +25,17 @@ h2.main-title {
     padding: 0.2rem 1rem;
     background-color: var(--sec-bg-color);
     color: var(--sec-txt-color);
-    border-radius: 1rem;
+    border-radius: 2rem;
     display: inline-block;
+    margin: 2rem 0;
+}
+
+.big-button {
+    padding: 0.5rem 1rem;
+    background-color: var(--sec-txt-color);
+    color: var(--sec-bg-color);
+    border-radius: 0.5rem;
+    font-size: 1.2rem;
+    text-decoration: none;
+    cursor: pointer;
 }
