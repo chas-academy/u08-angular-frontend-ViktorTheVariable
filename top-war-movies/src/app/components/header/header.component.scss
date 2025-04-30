@@ -1,9 +1,8 @@
-.myFooter {
-    background-image: url(/public/images/footer.jpg);
+header.myHeader {
+    background-image: url(/images/header.jpg);
     background-size: cover;
-    background-position: center;
+    background-position: center 70%;
     background-repeat: no-repeat;
-    padding: 3rem 0;
     display: flex;
     justify-content: center;
     align-items: center;

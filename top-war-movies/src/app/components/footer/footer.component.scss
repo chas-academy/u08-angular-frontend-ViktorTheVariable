@@ -1,0 +1,15 @@
+.myFooter {
+    background-image: url(/images/footer.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 3rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+small {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+}
