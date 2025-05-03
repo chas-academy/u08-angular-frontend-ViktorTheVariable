@@ -30,12 +30,15 @@ h2.main-title {
     margin: 2rem 0;
 }
 
+.button {
+    text-decoration: none;
+    cursor: pointer;
+}
+
 .big-button {
     padding: 0.5rem 1rem;
     background-color: var(--sec-txt-color);
     color: var(--sec-bg-color);
     border-radius: 0.5rem;
     font-size: 1.2rem;
-    text-decoration: none;
-    cursor: pointer;
 }

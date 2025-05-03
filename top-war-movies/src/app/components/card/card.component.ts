@@ -16,7 +16,7 @@ import { RouterModule } from '@angular/router';
         <h4 class="card-plot-title">Plot</h4>
         <p class="card-plot">{{ data.plot }}</p>
         <p class="card-rating">User Rating: {{ data.imdbRating.userRating }}</p>
-        <a [routerLink]="['/movie', data._id]" class="card-button big-button">View Details &gt;</a>
+        <a [routerLink]="['/movie', data._id]" class="card-button button big-button">View Details &gt;</a>
       </ng-container>
       
       <ng-template #missingData>
