@@ -1,1 +1,67 @@
-<p>login-register works!</p>
+<h2 class="main-title">Login/Register</h2>
+<div class="login-register-container">
+    <!-- LOGIN -->
+    <section class="login-register">
+        <h3 class="login-register-title">Login</h3>
+        <form class="form" [formGroup]="loginForm" (ngSubmit)="login()">
+            <input id="login-username"
+                   class="input"
+                   type="text"
+                   formControlName="username"
+                   placeholder="Username"
+                   maxlength="20"
+                   required>
+            <div *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched" class="error-message">
+                Username is required
+            </div>
+
+            <input id="login-password"
+                   class="input"
+                   type="password"
+                   formControlName="password"
+                   placeholder="Password"
+                   maxlength="20"
+                   required>
+            <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="error-message">
+                Password is required
+            </div>
+
+            <button type="submit" class="button form-button" [disabled]="loginForm.invalid">Login</button>
+
+            <div *ngIf="loginError" class="error-message">{{ loginError }}</div>
+        </form>
+    </section>
+
+    <!-- REGISTER -->
+    <section class="login-register">
+        <h3 class="login-register-title">Register</h3>
+        <form class="form" [formGroup]="registerForm" (ngSubmit)="register()">
+            <input id="register-username"
+                   class="input"
+                   type="text"
+                   formControlName="username"
+                   placeholder="Username"
+                   maxlength="20"
+                   required>
+            <div *ngIf="registerForm.get('username')?.invalid && registerForm.get('username')?.touched" class="error-message">
+                Username is required
+            </div>
+
+            <input id="register-password"
+                   class="input"
+                   type="password"
+                   formControlName="password"
+                   placeholder="Password"
+                   maxlength="20"
+                   required>
+            <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched" class="error-message">
+                Password is required
+            </div>
+
+            <button type="submit" class="button form-button" [disabled]="registerForm.invalid">Register</button>
+
+            <div *ngIf="registerError" class="error-message">{{ registerError }}</div>
+            <div *ngIf="registerSuccess" class="success-message">{{ registerSuccess }}</div>
+        </form>
+    </section>
+</div>

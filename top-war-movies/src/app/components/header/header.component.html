@@ -4,7 +4,12 @@
         <p class="header-subtitle">When Words Fail, War Speaks</p>
         <div class="header-buttons">
             <a routerLink="/" id="home" class="button small-button">Home</a>
-            <a routerLink="/login-register" id="login-register" class="button small-button">Login/Register</a>
+            <ng-container *ngIf="!isLoggedIn; else loggedInBlock">
+                <a routerLink="/login-register" id="login-register" class="button small-button">Login/Register</a>
+            </ng-container>
+            <ng-template #loggedInBlock>
+                <button (click)="logout()" id="logout" class="button small-button">Logout</button>
+            </ng-template>
         </div>
     </div>
 </header>
