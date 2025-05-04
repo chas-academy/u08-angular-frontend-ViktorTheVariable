@@ -1,12 +1,28 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable, tap } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
   private loggedIn = new BehaviorSubject<boolean>(!!localStorage.getItem('token'));
   isLoggedIn$ = this.loggedIn.asObservable();
 
-  login(token: string) {
+  constructor(private http: HttpClient) {}
+
+  login(username: string, password: string): Observable<any> {
+    return this.http.post<{ token: string }>('/api/v1/auth/login', { username, password }).pipe(
+      tap(response => {
+        localStorage.setItem('token', response.token);
+        this.loggedIn.next(true);
+      })
+    );
+  }
+
+  register(username: string, password: string): Observable<any> {
+    return this.http.post('/api/v1/auth/register', { username, password });
+  }
+
+  setToken(token: string) {
     localStorage.setItem('token', token);
     this.loggedIn.next(true);
   }
