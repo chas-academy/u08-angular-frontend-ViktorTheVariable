@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { MovieCard } from '../models/movie-card.model';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
+import { MovieDetails } from '../models/movie-details.model';
 
 @Injectable({
   providedIn: 'root'
@@ -26,4 +27,9 @@ export class MovieService {
       })))
     );
   }  
+
+  getMovieDetails(id: string): Observable<MovieDetails> {
+    return this.http.get<MovieDetails>(`${this.apiUrl}/${id}`);
+  }
+
 }
