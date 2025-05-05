@@ -1,0 +1,12 @@
+<div class="field">
+    <label class="label" [for]="id">{{ label }}</label>
+    <input
+      [id]="id"
+      class="input"
+      [type]="type"
+      [placeholder]="placeholder"
+      [attr.maxlength]="maxlength"
+      [value]="value"
+      (input)="onInput($event)"
+    >
+  </div>
