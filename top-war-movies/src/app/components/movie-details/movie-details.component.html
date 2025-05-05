@@ -1,38 +1,39 @@
 <h2 class="main-title">{{ movie?.title }}</h2>
-<div *ngIf="movie">
+<div *ngIf="movie" id="movie-details-container">
   <div id="image-container">
     <div>
       <img
         id="movie-image"
-        [src]="movie.media.imageUrl"
+        *ngIf="imageUrl"
+        [src]="imageUrl"
         [alt]="movie.title"
-        width="128"
+        width="96"
         height="128"
       />
     </div>
-    <div>
-      <p id="user-rating">
+    <div id="image-info-container">
+      <p id="user-rating" class="details-info">
         User Rating: <span>{{ movie.imdbRating.userRating }}</span>
       </p>
-      <p id="expert-rating">
+      <p id="expert-rating" class="details-info">
         Expert Rating: <span>{{ movie.imdbRating.expertRating }}</span>
       </p>
-      <p id="length">
+      <p id="length" class="details-info">
         Length: <span>{{ movie.length }}</span>
       </p>
-      <p id="release-year">
+      <p id="release-year" class="details-info">
         Release Year: <span>{{ movie.releaseYear }}</span>
       </p>
     </div>
   </div>
 
   <div id="plot-container">
-    <h4>Plot</h4>
+    <h4 class="details-title">Plot</h4>
     <p>{{ movie.plot }}</p>
   </div>
 
   <div id="trailer-container" *ngIf="movie.media.trailerUrl">
-    <h4>Trailer</h4>
+    <h4 class="details-title">Trailer</h4>
     <iframe
       width="280"
       height="158"
@@ -45,28 +46,28 @@
   </div>
 
   <div id="director-container">
-    <p>Director: {{ movie.director }}</p>
-    <p>WarType: {{ movie.warType }}</p>
+    <p class="details-info">Director: {{ movie.director }}</p>
+    <p class="details-info">WarType: {{ movie.warType }}</p>
   </div>
 
   <div id="cast-container">
-    <div id="actors-container">
-      <h4>Actors</h4>
+    <div id="actors-container" class="crew-container margin-box">
+      <h4 class="details-title">Actors</h4>
       <p *ngFor="let actor of movie.actors">{{ actor }}</p>
     </div>
-    <div id="writers-container">
-      <h4>Writers</h4>
+    <div id="writers-container" class="crew-container">
+      <h4 class="details-title">Writers</h4>
       <p *ngFor="let writer of movie.writers">{{ writer }}</p>
     </div>
   </div>
 
   <div id="production-container">
-    <div id="country-container">
-      <h4>Filming Locations</h4>
+    <div id="country-container" class="margin-box">
+      <h4 class="details-title">Filming Locations</h4>
       <p *ngFor="let country of movie.country">{{ country }}</p>
     </div>
     <div id="language-container">
-      <h4>Spoken Languages</h4>
+      <h4 class="details-title">Spoken Languages</h4>
       <p *ngFor="let lang of movie.language">{{ lang }}</p>
     </div>
   </div>

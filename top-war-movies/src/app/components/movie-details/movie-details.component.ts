@@ -28,4 +28,13 @@ export class MovieDetailsComponent implements OnInit {
       });
     }
   }
+
+  get imageUrl(): string {
+    if (!this.movie?.media?.imageUrl) return '';
+    const baseUrl = 'http://localhost:3000';
+    return this.movie.media.imageUrl.startsWith('http')
+      ? this.movie.media.imageUrl
+      : baseUrl + this.movie.media.imageUrl;
+  }
+  
 }
