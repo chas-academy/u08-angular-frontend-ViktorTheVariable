@@ -1,8 +1,14 @@
 <h2 class="main-title">Create New Movie</h2>
-<form>
+<form (ngSubmit)="onSubmit()">
     <div id="form-container">
         <app-input-field
-        id="movie-title" label="Titel" placeholder="Ange titel" [maxlength]="30"
+        id="movie-title"
+        label="Title"
+        placeholder="Movie Title"
+        [maxlength]="100"
+        [value]="title"
+        (valueChange)="title = $event"
         ></app-input-field>
+        <button type="submit">Spara film</button>
     </div>
 </form>
