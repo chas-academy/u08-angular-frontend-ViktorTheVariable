@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { InputFieldComponent } from '../input-field/input-field.component';
 import { MovieService } from '../../services/movie.service';
 import { FormsModule } from '@angular/forms';
+import { TextareaFieldComponent } from '../textarea-field/textarea-field.component';
 
 @Component({
   selector: 'app-create-movie',
   standalone: true,
-  imports: [InputFieldComponent, FormsModule],
+  imports: [InputFieldComponent, TextareaFieldComponent, FormsModule],
   templateUrl: './create-movie.component.html',
   styleUrl: './create-movie.component.scss'
 })

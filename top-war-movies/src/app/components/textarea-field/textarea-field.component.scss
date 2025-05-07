@@ -1,0 +1,23 @@
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    align-items: center;
+}
+
+.label {
+    color: var(--pri-txt-color);
+}
+
+.textarea {
+    padding: 0.2rem 0.5rem;
+    background-color: var(--sec-bg-color);
+    color: var(--pri-txt-color);
+    border-radius: 0.5rem;
+    border: none;
+    resize: none;
+}
+
+::placeholder {
+    color: var(--pri-txt-color);
+}
