@@ -36,6 +36,14 @@
         ></app-input-field>
 
         <app-input-field
+            id="movie-year"
+            label="Release Year"
+            placeholder="Ex: 1999"
+            [maxlength]="4"
+            [(value)]="releaseYear"
+        ></app-input-field>
+
+        <app-input-field
             id="movie-war-type"
             label="War Type"
             placeholder="Ex: World War II"
@@ -57,6 +65,22 @@
             placeholder="Ex: https://..."
             [maxlength]="255"
             [(value)]="trailerUrl"
+        ></app-input-field>
+
+        <app-input-field
+            id="movie-user-rating"
+            label="User Rating"
+            placeholder="Ex:9.4"
+            [maxlength]="4"
+            [(value)]="userRating"
+        ></app-input-field>
+
+        <app-input-field
+            id="movie-expert-rating"
+            label="Expert Rating"
+            placeholder="Ex: 3.6"
+            [maxlength]="4"
+            [(value)]="expertRating"
         ></app-input-field>
 
         <app-textarea-field
