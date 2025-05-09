@@ -122,3 +122,8 @@
         <button class="create-button button big-button" type="submit">Create Movie</button>
     </div>
 </form>
+<div *ngIf="errors.length" class="error-messages">
+  <ul>
+    <li *ngFor="let error of errors">{{ error }}</li>
+  </ul>
+</div>
