@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { TextareaFieldComponent } from '../textarea-field/textarea-field.component';
 import { MovieValidationService } from '../../services/movie-validation.service';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-movie',
@@ -33,7 +34,8 @@ export class CreateMovieComponent {
   errorMessage: string = '';
   errors: string[] = [];
 
-  constructor(private movieService: MovieService, private validationService: MovieValidationService) {}
+  constructor(private movieService: MovieService, 
+    private validationService: MovieValidationService, private router: Router) {}
 
   onSubmit() {
     this.errors = [];
@@ -106,6 +108,7 @@ export class CreateMovieComponent {
         this.country = '';
         this.imageUrl = '';
         this.trailerUrl = '';
+        this.router.navigate(['/']);
       },
       error: (err) => {
       this.successMessage = '';
