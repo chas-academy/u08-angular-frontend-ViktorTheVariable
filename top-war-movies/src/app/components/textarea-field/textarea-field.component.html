@@ -1,0 +1,13 @@
+<div class="field">
+    <label class="label" [for]="id">{{ label }}</label>
+    <textarea
+      [id]="id"
+      class="textarea"
+      [placeholder]="placeholder"
+      [attr.maxlength]="maxlength"
+      [rows]="rows"
+      [value]="value"
+      (input)="onInput($event)"
+    ></textarea>
+  </div>
+  

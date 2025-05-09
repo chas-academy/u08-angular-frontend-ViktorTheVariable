@@ -32,4 +32,8 @@ export class MovieService {
     return this.http.get<MovieDetails>(`${this.apiUrl}/${id}`);
   }
 
+  createMovie(movie: Partial<MovieDetails>): Observable<MovieDetails> {
+    return this.http.post<MovieDetails>(this.apiUrl, movie);
+  }
+
 }
