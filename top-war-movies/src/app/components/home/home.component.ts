@@ -14,6 +14,7 @@ import { RouterModule } from '@angular/router';
     <h2 class="main-title">Top War Movies</h2>
     <div>
       <a id="create-movie" class="button big-button" *ngIf="isAdmin" routerLink="/create-movie">Create Movie</a>
+    </div>
     <div *ngIf="isLoading">Loading Movies...</div>
     <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
     <div class="main-container">

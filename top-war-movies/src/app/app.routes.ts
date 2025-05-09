@@ -6,6 +6,7 @@ import { LoginRegisterComponent } from './components/login-register/login-regist
 import { AuthGuard } from './guards/auth.guard';
 import { CreateMovieComponent } from './components/create-movie/create-movie.component';
 import { AdminGuard } from './guards/admin.guard';
+import { UpdateMovieComponent } from './components/update-movie/update-movie.component';
 
 export const routes: Routes = [
     {
@@ -15,6 +16,7 @@ export const routes: Routes = [
             { path: '', component: HomeComponent },
             { path: 'movie/:id', component: MovieDetailsComponent, canActivate: [AuthGuard] },
             { path: 'create-movie', component: CreateMovieComponent, canActivate: [AdminGuard] },
+            { path: 'update-movie/:id', component: UpdateMovieComponent, canActivate: [AdminGuard] },
             { path: 'login-register', component: LoginRegisterComponent}
         ]
     },
