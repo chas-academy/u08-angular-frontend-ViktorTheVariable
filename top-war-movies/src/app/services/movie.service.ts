@@ -36,4 +36,12 @@ export class MovieService {
     return this.http.post<MovieDetails>(this.apiUrl, movie);
   }
 
+  updateMovie(id: string, movie: Partial<MovieDetails>): Observable<MovieDetails> {
+    return this.http.put<MovieDetails>(`${this.apiUrl}/${id}`, movie);
+  }
+
+  deleteMovie(id: string) {
+    return this.http.delete(`${this.apiUrl}/${id}`);
+  }
+
 }

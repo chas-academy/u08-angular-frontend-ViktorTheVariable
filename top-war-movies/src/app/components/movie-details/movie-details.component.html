@@ -71,4 +71,13 @@
       <p *ngFor="let lang of movie.language">{{ lang }}</p>
     </div>
   </div>
+
+  <div *ngIf="isAdmin">
+    <a id="update-movie" class="button big-button update-button" [routerLink]="['/update-movie', movie._id]">Update Movie</a>
+  </div>
+
+  <div *ngIf="isAdmin">
+    <button id="delete-movie" class="button big-button" (click)="onDelete()">Delete Movie</button>
+  </div>
+
 </div>
