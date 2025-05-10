@@ -1,0 +1,15 @@
+#form-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.create-button {
+    background-color: rgb(15, 190, 94);
+}
+
+.error-messages {
+    color: red;
+}
