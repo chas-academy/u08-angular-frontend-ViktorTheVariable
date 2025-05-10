@@ -6,7 +6,7 @@
         id="movie-image"
         *ngIf="imageUrl"
         [src]="imageUrl"
-        [alt]="movie.title"
+        [alt]="movie?.title"
         width="96"
         height="128"
       />
@@ -32,17 +32,15 @@
     <p>{{ movie.plot }}</p>
   </div>
 
-  <div id="trailer-container" *ngIf="movie.media.trailerUrl">
-    <h4 class="details-title">Trailer</h4>
-    <iframe
-      width="280"
-      height="158"
-      [src]="movie.media.trailerUrl | safeUrl"
-      title="YouTube video player"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      referrerpolicy="strict-origin-when-cross-origin"
-      allowfullscreen>
-    </iframe>
+  <div id="trailer-container" *ngIf="trailerUrl">
+  <h4 class="details-title">Trailer</h4>
+  <iframe
+    width="280"
+    height="158"
+    [src]="trailerUrl | safeUrl"
+    title="YouTube video player"
+    allowfullscreen>
+  </iframe>
   </div>
 
   <div id="director-container">

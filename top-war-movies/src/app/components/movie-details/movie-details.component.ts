@@ -36,13 +36,18 @@ export class MovieDetailsComponent implements OnInit {
     return this.authService.isAdmin();
   }
 
-  get imageUrl(): string {
-    if (!this.movie?.media?.imageUrl) return '';
-    const baseUrl = 'http://localhost:3000';
-    return this.movie.media.imageUrl.startsWith('http')
-      ? this.movie.media.imageUrl
-      : baseUrl + this.movie.media.imageUrl;
-  }
+  get imageUrl(): string | undefined {
+  const url = this.movie?.media?.imageUrl;
+  if (!url || url === 'Not specified') return undefined;
+  const baseUrl = 'http://localhost:3000';
+  return url.startsWith('http') ? url : baseUrl + url;
+}
+
+get trailerUrl(): string | undefined {
+  const url = this.movie?.media?.trailerUrl;
+  if (!url || url === 'Not specified') return undefined;
+  return url;
+}
 
    onDelete() {
   if (!this.movie?._id) return;
