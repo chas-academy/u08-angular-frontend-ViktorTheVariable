@@ -4,12 +4,13 @@ import { MovieCard } from '../models/movie-card.model';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { MovieDetails } from '../models/movie-details.model';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MovieService {
-  private apiUrl = '/api/v1/warmovies';
+  private apiUrl = environment.apiUrl + environment.apiVersion + '/warmovies';
   constructor(private http: HttpClient) { }
 
   getMovies(): Observable<MovieCard[]> {

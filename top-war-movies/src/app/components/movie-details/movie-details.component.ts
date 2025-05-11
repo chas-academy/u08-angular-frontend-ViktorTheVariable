@@ -5,6 +5,7 @@ import { MovieService } from '../../services/movie.service';
 import { CommonModule } from '@angular/common';
 import { SafeUrlPipe } from '../../pipes/safe-url.pipe';
 import { AuthService } from '../../services/auth.service';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-movie-details',
@@ -39,7 +40,7 @@ export class MovieDetailsComponent implements OnInit {
   get imageUrl(): string | undefined {
   const url = this.movie?.media?.imageUrl;
   if (!url || url === 'Not specified') return undefined;
-  const baseUrl = 'http://localhost:3000';
+  const baseUrl = environment.apiUrl;
   return url.startsWith('http') ? url : baseUrl + url;
 }
 

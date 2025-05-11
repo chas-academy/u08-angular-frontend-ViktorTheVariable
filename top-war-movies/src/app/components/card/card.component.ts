@@ -3,6 +3,7 @@ import { MovieCard } from '../../models/movie-card.model';
 import { CommonModule } from '@angular/common';
 import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+import { environment } from '../../../environments/environment';
 
 
 @Component({
@@ -32,16 +33,17 @@ export class CardComponent {
   constructor(private sanitizer: DomSanitizer) {}
 
   getBackgroundImage(): SafeStyle {
-    if (!this.data?.media?.imageUrl) {
+    const url = this.data?.media?.imageUrl;
+    if (!url || url.trim().toLowerCase() === 'not specified') {
       return this.sanitizer.bypassSecurityTrustStyle('none');
     }
 
-    const baseUrl = 'http://localhost:3000';
-
-    const imageUrl = this.data.media.imageUrl.startsWith('http')
-      ? this.data.media.imageUrl
-      : baseUrl + this.data.media.imageUrl;
+    const baseUrl = environment.apiUrl;
+    const imageUrl = url.startsWith('http')
+      ? url
+      : baseUrl + url;
 
     return this.sanitizer.bypassSecurityTrustStyle(`url('${imageUrl}')`);
   }
+
 }
