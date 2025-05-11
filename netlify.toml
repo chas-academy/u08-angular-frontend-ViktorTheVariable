@@ -1,4 +1,4 @@
 [build]
 base = "top-war-movies"
 command = "ng build"
-publish = "dist/top-war-movies"
+publish = "dist/top-war-movies/browser"
