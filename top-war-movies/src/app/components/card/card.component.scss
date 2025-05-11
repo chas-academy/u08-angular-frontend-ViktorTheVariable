@@ -1,0 +1,47 @@
+@mixin bg {
+    padding: 0.2rem 0.5rem;
+    background-color: var(--op-bg-color);
+}
+
+@mixin card {
+    @include bg;
+    border-left: 1px solid var(--pri-txt-color);
+    border-right: 1px solid var(--pri-txt-color);
+}
+
+.card {
+    max-width: 18rem;
+    background-size: cover;
+    background-position: center;
+    padding: 1rem;
+    color: var(--pri-txt-color);
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    border: 1px solid var(--pri-txt-color);
+}
+
+.card-title {
+    @include bg;
+    border-radius: 2rem;
+    font-size: 1.5rem;
+}
+
+.card-plot-title {
+    margin-bottom: -1rem;
+    border-top: 1px solid var(--pri-txt-color);
+    @include card;
+}
+
+.card-plot {
+    border-bottom: 1px solid var(--pri-txt-color);
+    @include card;
+}
+
+.card-rating {
+    @include bg;
+    border-radius: 2rem;
+}

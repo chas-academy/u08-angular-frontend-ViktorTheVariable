@@ -1,0 +1,128 @@
+<h2 class="main-title">Update: {{ title }}</h2>
+<form (ngSubmit)="onSubmit()">
+    <div id="form-container">
+        <app-input-field
+            id="movie-title"
+            label="Title"
+            placeholder="Movie Title"
+            [maxlength]="100"
+            [(value)]="title"
+        ></app-input-field>
+        
+        <app-textarea-field
+            id="movie-plot"
+            label="Plot"
+            placeholder="Write plot here..."
+            [maxlength]="500"
+            [rows]="3"
+            [(value)]="plot"
+        ></app-textarea-field>
+
+        <app-input-field
+            id="movie-director"
+            label="Director"
+            placeholder="Ex: Steven Spielberg"
+            [maxlength]="80"
+            [(value)]="director"
+        ></app-input-field>
+
+        <app-input-field
+            id="movie-length"
+            label="Movie Length"
+            placeholder="Ex: 2h34m"
+            [maxlength]="5"
+            [(value)]="length"
+        ></app-input-field>
+
+        <app-input-field
+            id="movie-year"
+            label="Release Year"
+            placeholder="Ex: 1999"
+            [maxlength]="4"
+            [(value)]="releaseYear"
+        ></app-input-field>
+
+        <app-input-field
+            id="movie-war-type"
+            label="War Type"
+            placeholder="Ex: World War II"
+            [maxlength]="50"
+            [(value)]="warType"
+        ></app-input-field>
+
+        <app-input-field
+            id="movie-image"
+            label="Image URL"
+            placeholder="Ex: https://..."
+            [maxlength]="255"
+            [(value)]="imageUrl"
+        ></app-input-field>
+
+        <app-input-field
+            id="movie-trailer"
+            label="Trailer URL"
+            placeholder="Ex: https://..."
+            [maxlength]="255"
+            [(value)]="trailerUrl"
+        ></app-input-field>
+
+        <app-input-field
+            id="movie-user-rating"
+            label="User Rating"
+            placeholder="Ex:9.4"
+            [maxlength]="4"
+            [(value)]="userRating"
+        ></app-input-field>
+
+        <app-input-field
+            id="movie-expert-rating"
+            label="Expert Rating"
+            placeholder="Ex: 3.6"
+            [maxlength]="4"
+            [(value)]="expertRating"
+        ></app-input-field>
+
+        <app-textarea-field
+            id="movie-writers"
+            label="Writers"
+            placeholder="Ex: John Doe, Jane Doe"
+            [maxlength]="255"
+            [rows]="3"
+            [(value)]="writers"
+        ></app-textarea-field>
+
+        <app-textarea-field
+            id="movie-actors"
+            label="Actors"
+            placeholder="Ex: John Doe, Jane Doe"
+            [maxlength]="255"
+            [rows]="3"
+            [(value)]="actors"
+        ></app-textarea-field>
+
+        <app-textarea-field
+            id="movie-language"
+            label="Spoken Languages"
+            placeholder="Ex: English, French"
+            [maxlength]="500"
+            [rows]="3"
+            [(value)]="language"
+        ></app-textarea-field>
+
+        <app-textarea-field
+            id="movie-country"
+            label="Filming Locations"
+            placeholder="Ex: USA, France"
+            [maxlength]="255"
+            [rows]="3"
+            [(value)]="country"
+        ></app-textarea-field>
+
+        <button class="update-button button big-button" type="submit">Update Movie</button>
+    </div>
+</form>
+<div *ngIf="errors.length" class="error-messages">
+  <ul>
+    <li *ngFor="let error of errors">{{ error }}</li>
+  </ul>
+</div>

@@ -1,0 +1,41 @@
+.header {
+    background-image: url(/images/header.jpg);
+    background-size: cover;
+    background-position: center 70%;
+    font-size: 1rem;
+    
+}
+
+.header-container {
+    text-align: center;
+}
+
+.header-title {
+    color: var(--sec-txt-color);
+    font-family: Rockwell, sans-serif;
+    font-weight: 900;
+}
+
+.header-subtitle {
+    display: inline-block;
+    font-size: 1rem;
+    font-family: Rockwell, sans-serif;
+    color: var(--pri-txt-color);
+    background-color: var(--op-bg-color);
+    margin: 0.5rem 0;
+    padding: 0.3rem 0.5rem;
+}
+
+.header-buttons {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.1rem 0.2rem;
+}
+
+.small-button {
+    padding: 0.3rem 0.5rem;
+    background-color: var(--sec-txt-color);
+    color: var(--pri-txt-color);
+    border-radius: 2rem;
+    font-size: 1rem;
+}

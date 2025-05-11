@@ -1,0 +1,46 @@
+div.login-register-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+section.login-register {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+h3.login-register-title {
+    color: var(--pri-txt-color);
+    font-size: 1.3rem;
+}
+
+form.form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    align-items: start;
+}
+
+input.input {
+    background-color: var(--sec-bg-color);
+    color: var(--pri-txt-color);
+    padding: 0.3rem 0.2rem;
+    border: 1px solid var(--pri-txt-color);
+    font-size: 0.9rem;
+}
+
+::placeholder {
+    color: var(--pri-txt-color);
+}
+
+.button.form-button {
+    padding: 0.1rem 0.3rem;
+    background-color: var(--sec-txt-color);
+    color: var(--sec-bg-color);
+    border-radius: 0.2rem;
+    font-size: 1rem;
+}
