@@ -50,6 +50,7 @@ export class UpdateMovieComponent implements OnInit {
     return value === 0 || value === 'Not specified' ? '' : value?.toString() || '';
   }
 
+  // Loads movie data into the form to allow editing.
   ngOnInit() {
   this.id = this.route.snapshot.paramMap.get('id') || '';
   this.movieService.getMovieDetails(this.id).subscribe({
@@ -83,6 +84,7 @@ export class UpdateMovieComponent implements OnInit {
     });
   }
 
+  // Validates and submits updated movie data
   onSubmit() {
     this.errors = [];
     this.successMessage = '';

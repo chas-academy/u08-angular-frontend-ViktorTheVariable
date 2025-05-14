@@ -6,8 +6,7 @@ import { RouterOutlet } from '@angular/router';
   imports: [RouterOutlet],
   template: `
     <router-outlet></router-outlet>
-  `,
-  styleUrl: './app.component.scss'
+  `
 })
 export class AppComponent {
   title = 'top-war-movies';

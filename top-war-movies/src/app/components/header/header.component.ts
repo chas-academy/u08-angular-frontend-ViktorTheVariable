@@ -15,6 +15,7 @@ export class HeaderComponent implements OnInit {
   isLoggedIn = false;
   constructor(private auth: AuthService, private router: Router) {}
 
+  // Subscribe to authentication status to reactively update the header when login state changes.
   ngOnInit() {
     this.auth.isLoggedIn$.subscribe(status => {
       console.log('isLoggedIn:', status);

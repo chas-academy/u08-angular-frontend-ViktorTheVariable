@@ -10,9 +10,12 @@ import { environment } from '../../environments/environment';
   providedIn: 'root'
 })
 export class MovieService {
+
+  // Sets the base URL for all movie-related API requests in one place.
   private apiUrl = environment.apiUrl + environment.apiVersion + '/warmovies';
   constructor(private http: HttpClient) { }
 
+  // Used to display a list of movies on the homepage.
   getMovies(): Observable<MovieCard[]> {
     return this.http.get<any[]>(this.apiUrl).pipe(
       map(movies => movies.map(movie => ({

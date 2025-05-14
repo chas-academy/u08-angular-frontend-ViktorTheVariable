@@ -33,10 +33,12 @@ export class HomeComponent implements OnInit {
 
   constructor(private movieService: MovieService, private authService: AuthService) {}
 
+  // used to control access to admin features in home.
   get isAdmin(): boolean {
     return this.authService.isAdmin();
   }
 
+  // Loads the list of movies and handles loading and error states.
   ngOnInit(): void {
     this.movieService.getMovies().subscribe({
       next: (data) => {

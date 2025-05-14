@@ -32,6 +32,7 @@ export class CardComponent {
 
   constructor(private sanitizer: DomSanitizer) {}
 
+  // Used to securely display the movie card's image or fallback when unavailable.
   getBackgroundImage(): SafeStyle {
     const url = this.data?.media?.imageUrl;
     if (!url || url.trim().toLowerCase() === 'not specified') {

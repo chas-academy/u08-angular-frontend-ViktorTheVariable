@@ -23,6 +23,7 @@ export class AuthService {
     return this.http.post(environment.apiUrl + environment.apiVersion + '/auth/register', { username, password });
   }
 
+  // sets the authentication token in localStorage and updates login state.
   setToken(token: string) {
     localStorage.setItem('token', token);
     this.loggedIn.next(true);

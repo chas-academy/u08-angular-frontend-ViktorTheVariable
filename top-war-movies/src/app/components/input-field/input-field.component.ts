@@ -18,6 +18,7 @@ export class InputFieldComponent {
 
   @Output() valueChange = new EventEmitter<string>();
 
+  // Notifies parent component of input value changes.
   onInput(event: Event) {
     const input = event.target as HTMLInputElement;
     this.valueChange.emit(input.value);

@@ -5,6 +5,7 @@ import { CanActivate, Router } from '@angular/router';
 export class AuthGuard implements CanActivate {
   constructor(private router: Router) {}
 
+  // To ensure only logged in users can access movie details.
   canActivate(): boolean {
     if (localStorage.getItem('token')) {
       return true;

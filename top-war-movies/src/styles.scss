@@ -43,3 +43,21 @@ h2.main-title {
     border-radius: 0.5rem;
     font-size: 1.2rem;
 }
+
+@media (min-width: 768px) and (max-width: 1279px) {
+    html {
+        font-size: 20px;
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1919px) {
+    html {
+        font-size: 25px;
+  }
+}
+
+@media (min-width: 1920px) {
+    html {
+        font-size: 31px;
+  }
+}

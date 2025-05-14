@@ -24,6 +24,7 @@ export class MovieDetailsComponent implements OnInit {
     private router: Router
   ) {}
 
+  // Fetches movie details to display when page component loads.
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
@@ -37,6 +38,7 @@ export class MovieDetailsComponent implements OnInit {
     return this.authService.isAdmin();
   }
 
+  // To ensure correct image is displayed for the movie.
   get imageUrl(): string | undefined {
   const url = this.movie?.media?.imageUrl;
   if (!url || url === 'Not specified') return undefined;
